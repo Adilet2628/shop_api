@@ -31,7 +31,7 @@ class ProductViewSet(ModelViewSet):
     def rating(self, request, pk):
         product = self.get_object()
         user = request.user
-        is_rating = product.ratings.filter(owner = user).exists()
+        is_rating = product.ratings.filter(owner=user).exists()
 
 
         if request.method == 'GET':

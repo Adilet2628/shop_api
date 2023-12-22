@@ -215,3 +215,21 @@ SWAGGER_SETTINGS = {
     },
     'USE_SESSION_AUTH': False,
 }
+#server {
+    #listen 80;
+    #server_name 35.226.174.64;
+
+    #location = /favicon.ico { access_log off; log_not_found off; }
+    #location /static/ {
+     #   root /home/adiletraimbekov269/shop_bt5;
+    #}
+
+    #location /media/ {
+     #   root /home/commieloliqq/shop_bt5;
+    #}
+
+   # location / {
+    #    include proxy_params;
+  #      proxy_pass http://unix:/run/gunicorn.sock;
+ #   }
+#}
