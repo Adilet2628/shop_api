@@ -93,7 +93,7 @@ DATABASES = {
         'NAME': con('DB_NAME'),
         'USER': con('DB_USER'),
         'PASSWORD': con('DB_PASSWORD'),
-        'HOST': 'localhost',
+        'HOST': 'db',
         'PORT': 5432
     }
 }
@@ -195,7 +195,7 @@ EMAIL_HOST_USER = con('EMAIL_USER')
 EMAIL_HOST_PASSWORD = con('EMAIL_PASSWORD')
 
 
-REDIS_HOST = 'localhost'
+REDIS_HOST = 'redis'
 REDIS_PORT = '6379'
 
 CELERY_BROKER_URL = 'redis://' + REDIS_HOST + ':' + REDIS_PORT + '/0'

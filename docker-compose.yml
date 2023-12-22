@@ -18,10 +18,10 @@ services:
     image: postgres
     restart: always
     ports:
-      - "5433:5433"
+      - "5433:5432"
     environment:
       POSTGRES_DB: shop_db
-      POSTGRES_USER: commieloliqq
+      POSTGRES_USER: adilet
       POSTGRES_PASSWORD: 1
     volumes:
       - postgres_data:/var/lib/postresql/data/
@@ -47,6 +47,21 @@ services:
     depends_on:
       - web
       - redis
+  nginx:
+    build:
+      context: .
+      dockerfile: nginx/Dockerfile
+    ports:
+      - "80:80"
+    volumes:
+      - .:/usr/src/app/
+      - static_volume:/usr/src/app/static
+      - media_volume:/usr/src/app/media
+    depends_on:
+      - web
+
+
+
 volumes:
   .:
   postgres_data:
